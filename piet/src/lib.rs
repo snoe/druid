@@ -3,6 +3,9 @@
 extern crate direct2d;
 
 #[cfg(target_os = "windows")]
+extern crate directwrite;
+
+#[cfg(target_os = "windows")]
 pub mod windows {
     pub mod math;
     pub mod render_target;

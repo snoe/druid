@@ -1,1 +1,1 @@
-use direct2d::brush;
+pub use direct2d::brush::*;

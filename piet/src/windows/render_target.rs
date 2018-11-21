@@ -1,1 +1,1 @@
-use direct2d::render_target;
+pub use direct2d::render_target::*;

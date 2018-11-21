@@ -46,7 +46,7 @@ use direct2d::render_target::{GenericRenderTarget, HwndRenderTarget, RenderTarge
 
 use Error;
 use dialog::{FileDialogOptions, FileDialogType, get_file_dialog_path};
-use dcomp::{D3D11Device, DCompositionDevice, DCompositionTarget, DCompositionVisual};
+use windows::dcomp::{D3D11Device, DCompositionDevice, DCompositionTarget, DCompositionVisual};
 use menu::Menu;
 use paint::{self, PaintCtx};
 use util::{OPTIONAL_FUNCTIONS, as_result, FromWide, ToWide};
