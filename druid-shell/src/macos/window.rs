@@ -1,5 +1,11 @@
 use std::any::Any;
 
+use std::ffi::OsString;
+
+use dialog::{FileDialogOptions, FileDialogType};
+
+use Error;
+
 use paint;
 
 pub struct IdleHandle {
@@ -27,9 +33,20 @@ pub trait WinHandler {
     fn paint(&self, paint_ctx: &mut paint::PaintCtx) -> bool;
 }
 
+#[derive(Clone,Default)]
 pub struct WindowHandle {}
 
 impl WindowHandle {
+    pub fn close(&self) {
+    }
+
+    pub fn invalidate(&self) {
+    }
+
+    pub fn file_dialog(&self, ty: FileDialogType, options: FileDialogOptions) -> Result<OsString, Error> {
+        Ok(OsString::from("foo"))
+    }
+
     pub fn pixels_to_px_xy<T: Into<f64>>(&self, x: T, y: T) -> (f32, f32) {
         (1.0,1.0)
     }
@@ -41,6 +58,8 @@ pub enum MouseType {
     Down,
     Up
 }
+
+#[derive(PartialEq, Eq, Clone, Copy, Debug)]
 pub enum MouseButton {}
 
 pub struct MouseEvent {
