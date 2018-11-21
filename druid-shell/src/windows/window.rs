@@ -38,7 +38,7 @@ use winapi::um::d2d1::*;
 use winapi::um::unknwnbase::*;
 use winapi::um::wingdi::*;
 use winapi::um::winnt::*;
-use winapi::um::winuser::*;
+pub use winapi::um::winuser::*;
 
 use direct2d;
 use direct2d::math::SizeU;
