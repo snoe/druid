@@ -21,7 +21,7 @@ core-foundation = "0.6"
 core-graphics = "0.17.3"
 cairo-rs = "0.5.0"
 
-[dependencies.winapi]
+[target.'cfg(target_os = "windows")'.dependencies.winapi]
 version = "0.3.6"
 features = ["d2d1_1", "dwrite", "winbase", "libloaderapi", "errhandlingapi", "winuser", "shellscalingapi", "shobjidl", "combaseapi", "synchapi", "dxgi1_3", "dcomp", "d3d11", "dwmapi", "wincon", "fileapi", "processenv", "winbase", "handleapi"]
 
