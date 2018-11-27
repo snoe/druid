@@ -28,6 +28,7 @@ pub use direct2d::Factory;
 
 #[cfg(target_os = "macos")]
 pub mod macos {
+    mod stroke_style;
     pub mod math;
     pub mod render_target;
     pub mod brush;

@@ -83,6 +83,9 @@ fn main() {
     builder.set_handler(Box::new(UiMain::new(state)));
     builder.set_title("Animation example");
     let window = builder.build().unwrap();
+    println!("hi1");
     window.show();
+    println!("hi2");
     run_loop.run();
+    println!("hi3");
 }

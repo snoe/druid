@@ -1,6 +1,7 @@
 use math::*;
 use write::*;
 use brush::Brush;
+use macos::stroke_style::StrokeStyle;
 
 pub trait RenderTarget {
 
@@ -8,6 +9,19 @@ pub trait RenderTarget {
         where
             R: Into<RectF>,
             B: Brush,
+    {}
+
+    fn draw_line<P0, P1, B>(
+        &mut self,
+        p0: P0,
+        p1: P1,
+        brush: &B,
+        stroke_width: f32,
+        stroke_style: Option<&StrokeStyle>,
+    ) where
+        P0: Into<Point2F>,
+        P1: Into<Point2F>,
+        B: Brush,
     {}
 
     fn draw_text_layout<P, B>(

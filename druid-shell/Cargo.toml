@@ -6,12 +6,20 @@ authors = ["Raph Levien <raph.levien@gmail.com>"]
 description = "Platform-specific application shell used for druid toolkit."
 
 [dependencies]
+lazy_static = "1.0"
+time = "0.1.39"
+
+[tartget.'cfg(target_os = "windows")'.dependencies]
 directwrite = "0.1.2"
 direct2d = "0.2.0"
 wio = "0.2"
 
-lazy_static = "1.0"
-time = "0.1.39"
+[target.'cfg(target_os = "macos")'.dependencies]
+objc = "0.2.3"
+cocoa = "0.18.4"
+core-foundation = "0.6"
+core-graphics = "0.17.3"
+cairo-rs = "0.5.0"
 
 [dependencies.winapi]
 version = "0.3.6"
@@ -20,3 +28,5 @@ features = ["d2d1_1", "dwrite", "winbase", "libloaderapi", "errhandlingapi", "wi
 [dependencies.piet]
 path = "../piet"
 version = "0.1.0"
+
+
